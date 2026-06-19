@@ -1,0 +1,32 @@
+[project]
+name = "agentic-rag"
+version = "0.1.0"
+description = "Agentic RAG system built with LangChain & LangGraph"
+authors = [
+    { name = "Kamil Stachurski", email = "kamil.stachurski@icloud.com" }
+]
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "onnxruntime==1.20.1",
+    "langchain-chroma>=1.1.0,<2.0.0",
+    "beautifulsoup4>=4.15.0,<5.0.0",
+    "langchain>=1.3.9,<2.0.0",
+    "langgraph>=1.2.5,<2.0.0",
+    "langchainhub>=0.1.21,<0.2.0",
+    "langchain-community>=0.4.2,<0.5.0",
+    "tavily-python>=0.7.26,<0.8.0",
+    "python-dotenv>=1.2.2,<2.0.0",
+    "langchain-ollama>=1.1.0,<2.0.0",
+    "langchain-openai>=1.3.2,<2.0.0",
+    "protobuf>=3.20.0,<3.21.0",
+    "langchain-tavily>=0.2.18,<0.3.0",
+]
+
+[dependency-groups]
+dev = [
+    "black>=26.5.1,<27.0.0",
+    "isort>=8.0.1,<9.0.0",
+    "pytest>=9.0.3,<10.0.0",
+    "ruff>=0.9.0",
+]
