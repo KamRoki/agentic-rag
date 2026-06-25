@@ -5,7 +5,7 @@ load_dotenv()
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
 from langchain_community.document_loaders import WebBaseLoader
-from langchain_ollama import OllamaEmbeddings
+from langchain_openai import OpenAIEmbeddings
 
 
 urls = [
@@ -25,16 +25,16 @@ text_splitter = RecursiveCharacterTextSplitter.from_tiktoken_encoder(chunk_size 
 doc_splits = text_splitter.split_documents(docs_list)
 
 
-vectorstore = Chroma.from_documents(
-    documents = doc_splits,
-    collection_name = 'rag-chroma-data',
-    embedding = OllamaEmbeddings(model = 'rjmalagon/gte-qwen2-1.5b-instruct-embed-f16:latest'),
-    persist_directory = './.chroma'
-)
+# vectorstore = Chroma.from_documents(
+#     documents = doc_splits,
+#     collection_name = 'rag-chroma-data',
+#     embedding = OpenAIEmbeddings(),
+#     persist_directory = './.chroma'
+# )
 
 
 retriever = Chroma(
     collection_name = 'rag-chroma-data',
     persist_directory = './.chroma',
-    embedding_function = OllamaEmbeddings(model = 'rjmalagon/gte-qwen2-1.5b-instruct-embed-f16:latest')
+    embedding_function = OpenAIEmbeddings()
 ).as_retriever()

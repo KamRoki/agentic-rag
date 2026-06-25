@@ -1,2 +1,1 @@
-# agentic-rag
-agentic-rag
+# Agentic RAG
