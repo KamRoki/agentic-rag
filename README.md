@@ -3,14 +3,14 @@ Agentic RAG is an experimental Retrieval-Augmented Generation system built with 
 
 ## What this project does
 This repository implements a graph-based RAG workflow with the following capabilities:
-- routes user questions either to a local vector store or to web search,
-- retrieves documents from a local Chroma collection,
-- grades retrieved documents for relevance,
-- enriches weak or incomplete retrieval results with Tavily web search,
-- generates concise answers from the retrieved context,
-- checks whether the generated answer is grounded in the documents,
-- checks whether the answer resolves the original user question,
-- exports the LangGraph workflow visualization to `graph.png`.
+* routes user questions either to a local vector store or to web search
+* retrieves documents from a local Chroma collection
+* grades retrieved documents for relevance
+* enriches weak or incomplete retrieval results with Tavily web search
+* generates concise answers from the retrieved context
+* checks whether the generated answer is grounded in the documents
+* checks whether the answer resolves the original user question
+* exports the LangGraph workflow visualization to `graph.png`.
 
 ## Architecture
 The main workflow is defined in `graph/graph.py` and compiled as a LangGraph application.
@@ -56,14 +56,14 @@ The application follows this decision flow:
 10. If the answer is not useful or not grounded, the graph either retries generation or uses web search.
 
 ## Tech stack
-- Python 3.11
-- LangChain
-- LangGraph
-- Chroma
-- OpenAI models and embeddings
-- Tavily Search
-- python-dotenv
-- uv
+* Python 3.11
+* LangChain
+* LangGraph
+* Chroma
+* OpenAI models and embeddings
+* Tavily Search
+* python-dotenv
+* uv
 
 ## Requirements
 This project requires Python `>=3.11,<3.12`.
@@ -192,18 +192,5 @@ result = app.invoke(
 print(result)
 ```
 
-## Project status
-This is an educational and experimental implementation of an agentic RAG system. It is suitable for learning, prototyping and architecture exploration.
-Before using it in a production environment, consider adding:
-- a proper CLI for custom questions,
-- automated tests for chains and graph nodes,
-- a documented `.env.example` file,
-- better error handling for missing vector stores,
-- configuration for model names and retriever parameters,
-- support for local document ingestion,
-- structured logging,
-- evaluation examples,
-- CI checks for formatting and tests.
-
 ## Author
-Kamil Stachurski
+Kamil Stachurski (e-mail: kamil.stachurski@icloud.com)
